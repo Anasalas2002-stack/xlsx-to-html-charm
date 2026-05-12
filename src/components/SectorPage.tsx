@@ -19,9 +19,11 @@ export interface SectorPageProps {
   sections: SectorSection[];
   benefits: string[];
   icon: LucideIcon;
+  coverImage?: string;
+  coverAlt?: string;
 }
 
-export function SectorPage({ badge, title, intro, sections, benefits, icon: Icon }: SectorPageProps) {
+export function SectorPage({ badge, title, intro, sections, benefits, icon: Icon, coverImage, coverAlt }: SectorPageProps) {
   return (
     <SiteLayout>
       <section className="subpage-hero">
@@ -34,6 +36,14 @@ export function SectorPage({ badge, title, intro, sections, benefits, icon: Icon
           <p key={i} style={{ fontSize: "1.1rem", color: "var(--text-muted)", maxWidth: 820, marginBottom: 16 }}>{p}</p>
         ))}
       </section>
+
+      {coverImage && (
+        <div className="subpage-cover">
+          <div className="subpage-cover-inner">
+            <img src={coverImage} alt={coverAlt ?? title} />
+          </div>
+        </div>
+      )}
 
       <section className="subpage-content">
         <div>

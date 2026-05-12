@@ -36,6 +36,8 @@ const SECTORS = {
       { h: "Minutas virtuales digitales", p: "Trazabilidad de ingresos, rondas, visitantes y novedades operativas." },
     ],
     mockup: { title: "ACCESO PEATONAL NORTE", status: "Online", icon: Scan, color: "var(--accent)" },
+    image: imgGuardiaResidencial,
+    imageAlt: "Guardia SMC con uniforme Seguridad Privada Moderna en conjunto residencial",
     href: "/sectores/residencial" as const,
   },
   clinicas: {
@@ -50,6 +52,8 @@ const SECTORS = {
       { h: "Alarmas y reacción inmediata", p: "Integración con supervisión permanente y tiempos de respuesta cortos." },
     ],
     mockup: { title: "ÁREA RESTRINGIDA · FARMACIA", status: "Alerta de Acceso", icon: UserX, color: "#ef4444" },
+    image: imgRecepcion,
+    imageAlt: "Recepción de SMC atendiendo a una visitante en el lobby",
     href: "/sectores/clinicas" as const,
   },
   empresas: {
@@ -64,6 +68,8 @@ const SECTORS = {
       { h: "Monitoreo remoto 24/7", p: "Alarmas integradas, vigilancia física y reacción coordinada." },
     ],
     mockup: { title: "PORTÓN VEHICULAR DE CARGA", status: "LPR Activo", icon: Truck, color: "var(--accent)" },
+    image: imgCamaraAcceso,
+    imageAlt: "Cámara de seguridad y biométrico en acceso peatonal corporativo",
     href: "/sectores/empresas" as const,
   },
   comercio: {
@@ -78,6 +84,8 @@ const SECTORS = {
       { h: "Minutas virtuales", p: "Documentación digital de toda la operación para auditoría y supervisión." },
     ],
     mockup: { title: "SALA DE MONITOREO PRINCIPAL", status: "Grabando", icon: Airplay, color: "var(--accent)" },
+    image: imgTorniquetes,
+    imageAlt: "Torniquetes con biométrico y validación facial en centro comercial",
     href: "/sectores/centros-comerciales" as const,
   },
 };

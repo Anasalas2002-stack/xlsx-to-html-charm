@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { SiteLayout } from "@/components/SiteLayout";
 import {
   Cpu, ArrowRight, ShieldCheck, Eye, Activity, Video, ScanEye, Binary, FileSpreadsheet,
   Home, HeartPulse, Building2, ShoppingBag, CheckCircle2, Scan, UserX, Truck, Airplay,
@@ -119,7 +120,7 @@ function Index() {
   const ActiveIcon = active.mockup.icon;
 
   return (
-    <main>
+    <SiteLayout><main>
       {/* HERO */}
       <section className="hero">
         <div className="hero-grid">

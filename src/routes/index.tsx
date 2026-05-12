@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import {
+  imgMotorizado, imgEscolta, imgRecepcion, imgGuardiaResidencial, imgTorniquetes, imgCamaraAcceso,
+} from "@/assets/smc";
+import {
   Cpu, ArrowRight, ShieldCheck, Eye, Activity, Video, ScanEye, Binary, FileSpreadsheet,
   Home, HeartPulse, Building2, ShoppingBag, CheckCircle2, Scan, UserX, Truck, Airplay,
   ShieldAlert, Scale, BadgeCheck, ChevronDown, Check, MapPin, Navigation, Award, Sparkles,

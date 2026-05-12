@@ -435,6 +435,6 @@ function Index() {
           </div>
         </div>
       </section>
-    </main>
+    </main></SiteLayout>
   );
 }

@@ -106,21 +106,29 @@ const MODALITIES = [
     h: "Seguridad con Arma",
     p: "Protección para entornos que requieren mayor capacidad de reacción y control disuasivo.",
     items: ["Personal capacitado y autorizado", "Protocolos de reacción auditados", "Supervisión permanente", "Integración con tecnología y monitoreo"],
+    image: imgMotorizado,
+    imageAlt: "Operador armado y motorizado de SMC en patrullaje",
   },
   {
     h: "Seguridad sin Arma",
     p: "Control preventivo, atención profesional y manejo eficiente de accesos y protocolos. Ideal para conjuntos, oficinas, clínicas y centros comerciales.",
     items: ["Excelente presentación corporativa", "Control de visitantes", "Minutas virtuales", "Apoyo tecnológico"],
+    image: imgGuardiaResidencial,
+    imageAlt: "Guardia uniformado SMC en conjunto residencial",
   },
   {
     h: "Operadores de Medios Tecnológicos",
     p: "Monitoreo inteligente con apoyo de IA y vigilancia en tiempo real, operado por personal entrenado.",
     items: ["Cámaras inteligentes", "Lectura de placas LPR", "Validación facial", "Alarmas y monitoreo remoto", "Detección de cruce de línea"],
+    image: imgTorniquetes,
+    imageAlt: "Torniquetes con biométrico y validación facial",
   },
   {
     h: "Servicios de Escolta",
     p: "Protección especializada para personas, rutas y activos estratégicos con operación discreta y profesional.",
     items: ["Personal autorizado", "Planeación de riesgos", "Comunicación permanente", "Acompañamiento estratégico"],
+    image: imgEscolta,
+    imageAlt: "Escolta SMC en traje frente a vehículo blindado",
   },
 ];
 
@@ -156,19 +164,19 @@ function Index() {
           </div>
 
           <div className="hero-interactive">
-            <div className="shield-container">
-              <div className="shield-inner">
-                <div className="shield-core">
-                  <ShieldCheck style={{ width: 64, height: 64 }} />
-                </div>
+            <div className="hero-photo">
+              <img src={imgMotorizado} alt="Operador motorizado de SMC en patrullaje y reacción" />
+              <div className="hero-photo-tag">
+                <Activity style={{ width: 14, height: 14 }} />
+                Reacción Operativa
               </div>
             </div>
-            <div className="tech-tag" style={{ top: "10%", left: "5%" }}>
+            <div className="tech-tag" style={{ top: "8%", left: "-4%" }}>
               <Eye style={{ color: "var(--accent)", width: 16, height: 16 }} />
               Detección Perimetral
             </div>
-            <div className="tech-tag" style={{ bottom: "15%", right: "5%", animationDelay: "-3s" }}>
-              <Activity style={{ color: "var(--accent)", width: 16, height: 16 }} />
+            <div className="tech-tag" style={{ bottom: "12%", right: "-4%", animationDelay: "-3s" }}>
+              <ShieldCheck style={{ color: "var(--accent)", width: 16, height: 16 }} />
               Monitoreo IA Activo
             </div>
           </div>
@@ -257,8 +265,8 @@ function Index() {
                 {active.mockup.status}
               </div>
             </div>
-            <div style={{ background: "#111a2e", height: 220, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.05)" }}>
-              <ActiveIcon style={{ width: 64, height: 64, color: active.mockup.color, opacity: 0.6 }} />
+            <div className="sector-media">
+              <img src={active.image} alt={active.imageAlt} />
             </div>
           </div>
         </div>

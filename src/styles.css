@@ -78,6 +78,10 @@ header.smc-header { position: fixed; top: 0; width: 100%; z-index: 1000; backgro
 header.smc-header.scrolled { padding: 10px 0; background: rgba(6,11,19,0.95); }
 .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
 .logo-area { display: flex; align-items: center; gap: 8px; font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+.logo-pill { display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 6px 14px; border-radius: 12px; box-shadow: 0 4px 18px rgba(0, 245, 255, 0.18), 0 0 0 1px rgba(0,245,255,0.15); transition: var(--transition-smooth); }
+.logo-pill img { height: 38px; width: auto; display: block; }
+.smc-header.scrolled .logo-pill img { height: 32px; }
+.logo-pill:hover { box-shadow: 0 6px 24px rgba(0, 245, 255, 0.35), 0 0 0 1px rgba(0,245,255,0.4); transform: translateY(-1px); }
 .logo-icon { color: var(--accent); animation: pulse-glow 2s infinite alternate; }
 .nav-menu { display: flex; gap: 32px; list-style: none; padding: 0; margin: 0; }
 .nav-menu a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-smooth); position: relative; padding: 8px 0; }

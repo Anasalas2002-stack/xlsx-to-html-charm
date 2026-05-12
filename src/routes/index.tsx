@@ -407,6 +407,36 @@ function Index() {
         </div>
       </section>
 
+      {/* GALERÍA OPERATIVA */}
+      <section className="gallery-section" id="galeria">
+        <h2 style={{ fontSize: "2.5rem", textAlign: "center", marginBottom: 12 }}>Operación en Imágenes</h2>
+        <p style={{ color: "var(--text-muted)", textAlign: "center", maxWidth: 640, margin: "0 auto" }}>
+          Equipo, tecnología y presencia real en cada punto donde operamos.
+        </p>
+        <div className="gallery-grid">
+          <div className="gallery-tile tile-lg">
+            <img src={imgEscolta} alt="Escolta SMC en traje formal junto a vehículo" loading="lazy" />
+            <div className="gallery-tile-label"><small>Servicios de escolta</small>Protección estratégica</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgRecepcion} alt="Recepción atendiendo visitante" loading="lazy" />
+            <div className="gallery-tile-label"><small>Recepción</small>Atención profesional</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgTorniquetes} alt="Torniquetes con biométrico" loading="lazy" />
+            <div className="gallery-tile-label"><small>Control de acceso</small>Validación facial</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgGuardiaResidencial} alt="Guardia uniformado en residencial" loading="lazy" />
+            <div className="gallery-tile-label"><small>Residencial</small>Vigilancia perimetral</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgCamaraAcceso} alt="Cámara y biométrico en acceso" loading="lazy" />
+            <div className="gallery-tile-label"><small>Tecnología</small>Cámaras e IA</div>
+          </div>
+        </div>
+      </section>
+
       {/* COBERTURA */}
       <section className="coverage-interactive" id="cobertura">
         <h2 style={{ fontSize: "2.5rem", textAlign: "center", marginBottom: 12 }}>Cobertura Operativa</h2>

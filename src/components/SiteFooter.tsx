@@ -1,13 +1,15 @@
-import { Shield, PhoneCall, MapPin } from "lucide-react";
+import { PhoneCall, MapPin } from "lucide-react";
+import { logoSMC } from "@/assets/smc";
 
 export function SiteFooter() {
   return (
     <footer className="smc-footer" id="contacto">
       <div className="footer-grid">
         <div>
-          <a href="#" className="logo-area" style={{ marginBottom: 30 }}>
-            <Shield className="logo-icon" />
-            <span>SMC <span style={{ color: "var(--accent)" }}>LTDA</span></span>
+          <a href="#" className="logo-area" style={{ marginBottom: 30 }} aria-label="SMC Ltda">
+            <span className="logo-pill">
+              <img src={logoSMC} alt="SMC Ltda Seguridad Privada" />
+            </span>
           </a>
           <h2 style={{ fontSize: "2.4rem", lineHeight: 1.2, marginTop: 24, marginBottom: 20 }}>
             La seguridad cambió.<br />Tu operación también debería hacerlo.

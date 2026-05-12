@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Shield } from "lucide-react";
 import { useEffect, useState } from "react";
+import { logoSMC } from "@/assets/smc";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,9 +12,10 @@ export function SiteHeader() {
   return (
     <header className={`smc-header ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        <Link to="/" className="logo-area">
-          <Shield className="logo-icon" />
-          <span>SMC <span style={{ color: "var(--accent)" }}>LTDA</span></span>
+        <Link to="/" className="logo-area" aria-label="SMC Ltda - Inicio">
+          <span className="logo-pill">
+            <img src={logoSMC} alt="SMC Ltda Seguridad Privada" />
+          </span>
         </Link>
         <ul className="nav-menu">
           <li><Link to="/">Inicio</Link></li>

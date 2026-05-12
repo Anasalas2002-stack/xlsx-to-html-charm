@@ -136,7 +136,7 @@ function Index() {
   const [sector, setSector] = useState<SectorKey>("residencial");
   const [openAcc, setOpenAcc] = useState(0);
   const active = SECTORS[sector];
-  const _ActiveIcon = active.mockup.icon; void _ActiveIcon;
+  
 
   return (
     <SiteLayout><main>

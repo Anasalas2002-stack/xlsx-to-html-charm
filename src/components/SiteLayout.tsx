@@ -1,0 +1,12 @@
+import { SiteHeader } from "./SiteHeader";
+import { SiteFooter } from "./SiteFooter";
+
+export function SiteLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <SiteHeader />
+      {children}
+      <SiteFooter />
+    </>
+  );
+}

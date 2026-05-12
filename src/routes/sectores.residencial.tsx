@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Home } from "lucide-react";
 import { SectorPage } from "@/components/SectorPage";
+import { imgGuardiaResidencial } from "@/assets/smc";
 
 export const Route = createFileRoute("/sectores/residencial")({
   component: () => (
     <SectorPage
       icon={Home}
+      coverImage={imgGuardiaResidencial}
+      coverAlt="Guardia SMC con uniforme Seguridad Privada Moderna en conjunto residencial"
       badge="Seguridad Residencial"
       title="Tranquilidad para residentes. Control total para la administración."
       intro={[

@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
 import { SectorPage } from "@/components/SectorPage";
+import { imgTorniquetes } from "@/assets/smc";
 
 export const Route = createFileRoute("/sectores/centros-comerciales")({
   component: () => (
     <SectorPage
       icon={ShoppingBag}
+      coverImage={imgTorniquetes}
+      coverAlt="Torniquetes con biométrico y validación facial en centro comercial"
       badge="Centros Comerciales"
       title="Vigilancia inteligente para espacios de gran afluencia"
       intro={[

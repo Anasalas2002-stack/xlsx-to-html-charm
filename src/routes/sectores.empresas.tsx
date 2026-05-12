@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2 } from "lucide-react";
 import { SectorPage } from "@/components/SectorPage";
+import { imgCamaraAcceso } from "@/assets/smc";
 
 export const Route = createFileRoute("/sectores/empresas")({
   component: () => (
     <SectorPage
       icon={Building2}
+      coverImage={imgCamaraAcceso}
+      coverAlt="Cámara de seguridad y biométrico en acceso corporativo"
       badge="Seguridad para Empresas"
       title="Protección integral para operaciones, activos y personal"
       intro={[

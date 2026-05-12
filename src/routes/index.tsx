@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import {
+  imgMotorizado, imgEscolta, imgRecepcion, imgGuardiaResidencial, imgTorniquetes, imgCamaraAcceso,
+} from "@/assets/smc";
+import {
   Cpu, ArrowRight, ShieldCheck, Eye, Activity, Video, ScanEye, Binary, FileSpreadsheet,
   Home, HeartPulse, Building2, ShoppingBag, CheckCircle2, Scan, UserX, Truck, Airplay,
   ShieldAlert, Scale, BadgeCheck, ChevronDown, Check, MapPin, Navigation, Award, Sparkles,
@@ -33,6 +36,8 @@ const SECTORS = {
       { h: "Minutas virtuales digitales", p: "Trazabilidad de ingresos, rondas, visitantes y novedades operativas." },
     ],
     mockup: { title: "ACCESO PEATONAL NORTE", status: "Online", icon: Scan, color: "var(--accent)" },
+    image: imgGuardiaResidencial,
+    imageAlt: "Guardia SMC con uniforme Seguridad Privada Moderna en conjunto residencial",
     href: "/sectores/residencial" as const,
   },
   clinicas: {
@@ -47,6 +52,8 @@ const SECTORS = {
       { h: "Alarmas y reacción inmediata", p: "Integración con supervisión permanente y tiempos de respuesta cortos." },
     ],
     mockup: { title: "ÁREA RESTRINGIDA · FARMACIA", status: "Alerta de Acceso", icon: UserX, color: "#ef4444" },
+    image: imgRecepcion,
+    imageAlt: "Recepción de SMC atendiendo a una visitante en el lobby",
     href: "/sectores/clinicas" as const,
   },
   empresas: {
@@ -61,6 +68,8 @@ const SECTORS = {
       { h: "Monitoreo remoto 24/7", p: "Alarmas integradas, vigilancia física y reacción coordinada." },
     ],
     mockup: { title: "PORTÓN VEHICULAR DE CARGA", status: "LPR Activo", icon: Truck, color: "var(--accent)" },
+    image: imgCamaraAcceso,
+    imageAlt: "Cámara de seguridad y biométrico en acceso peatonal corporativo",
     href: "/sectores/empresas" as const,
   },
   comercio: {
@@ -75,6 +84,8 @@ const SECTORS = {
       { h: "Minutas virtuales", p: "Documentación digital de toda la operación para auditoría y supervisión." },
     ],
     mockup: { title: "SALA DE MONITOREO PRINCIPAL", status: "Grabando", icon: Airplay, color: "var(--accent)" },
+    image: imgTorniquetes,
+    imageAlt: "Torniquetes con biométrico y validación facial en centro comercial",
     href: "/sectores/centros-comerciales" as const,
   },
 };
@@ -95,21 +106,29 @@ const MODALITIES = [
     h: "Seguridad con Arma",
     p: "Protección para entornos que requieren mayor capacidad de reacción y control disuasivo.",
     items: ["Personal capacitado y autorizado", "Protocolos de reacción auditados", "Supervisión permanente", "Integración con tecnología y monitoreo"],
+    image: imgMotorizado,
+    imageAlt: "Operador armado y motorizado de SMC en patrullaje",
   },
   {
     h: "Seguridad sin Arma",
     p: "Control preventivo, atención profesional y manejo eficiente de accesos y protocolos. Ideal para conjuntos, oficinas, clínicas y centros comerciales.",
     items: ["Excelente presentación corporativa", "Control de visitantes", "Minutas virtuales", "Apoyo tecnológico"],
+    image: imgGuardiaResidencial,
+    imageAlt: "Guardia uniformado SMC en conjunto residencial",
   },
   {
     h: "Operadores de Medios Tecnológicos",
     p: "Monitoreo inteligente con apoyo de IA y vigilancia en tiempo real, operado por personal entrenado.",
     items: ["Cámaras inteligentes", "Lectura de placas LPR", "Validación facial", "Alarmas y monitoreo remoto", "Detección de cruce de línea"],
+    image: imgTorniquetes,
+    imageAlt: "Torniquetes con biométrico y validación facial",
   },
   {
     h: "Servicios de Escolta",
     p: "Protección especializada para personas, rutas y activos estratégicos con operación discreta y profesional.",
     items: ["Personal autorizado", "Planeación de riesgos", "Comunicación permanente", "Acompañamiento estratégico"],
+    image: imgEscolta,
+    imageAlt: "Escolta SMC en traje frente a vehículo blindado",
   },
 ];
 
@@ -117,7 +136,7 @@ function Index() {
   const [sector, setSector] = useState<SectorKey>("residencial");
   const [openAcc, setOpenAcc] = useState(0);
   const active = SECTORS[sector];
-  const ActiveIcon = active.mockup.icon;
+  
 
   return (
     <SiteLayout><main>
@@ -145,19 +164,19 @@ function Index() {
           </div>
 
           <div className="hero-interactive">
-            <div className="shield-container">
-              <div className="shield-inner">
-                <div className="shield-core">
-                  <ShieldCheck style={{ width: 64, height: 64 }} />
-                </div>
+            <div className="hero-photo">
+              <img src={imgMotorizado} alt="Operador motorizado de SMC en patrullaje y reacción" />
+              <div className="hero-photo-tag">
+                <Activity style={{ width: 14, height: 14 }} />
+                Reacción Operativa
               </div>
             </div>
-            <div className="tech-tag" style={{ top: "10%", left: "5%" }}>
+            <div className="tech-tag" style={{ top: "8%", left: "-4%" }}>
               <Eye style={{ color: "var(--accent)", width: 16, height: 16 }} />
               Detección Perimetral
             </div>
-            <div className="tech-tag" style={{ bottom: "15%", right: "5%", animationDelay: "-3s" }}>
-              <Activity style={{ color: "var(--accent)", width: 16, height: 16 }} />
+            <div className="tech-tag" style={{ bottom: "12%", right: "-4%", animationDelay: "-3s" }}>
+              <ShieldCheck style={{ color: "var(--accent)", width: 16, height: 16 }} />
               Monitoreo IA Activo
             </div>
           </div>
@@ -246,8 +265,8 @@ function Index() {
                 {active.mockup.status}
               </div>
             </div>
-            <div style={{ background: "#111a2e", height: 220, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.05)" }}>
-              <ActiveIcon style={{ width: 64, height: 64, color: active.mockup.color, opacity: 0.6 }} />
+            <div className="sector-media">
+              <img src={active.image} alt={active.imageAlt} />
             </div>
           </div>
         </div>
@@ -327,6 +346,9 @@ function Index() {
                     </div>
                   ))}
                 </div>
+                <div className="accordion-image">
+                  <img src={m.image} alt={m.imageAlt} loading="lazy" />
+                </div>
               </div>
             </div>
           ))}
@@ -381,6 +403,36 @@ function Index() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GALERÍA OPERATIVA */}
+      <section className="gallery-section" id="galeria">
+        <h2 style={{ fontSize: "2.5rem", textAlign: "center", marginBottom: 12 }}>Operación en Imágenes</h2>
+        <p style={{ color: "var(--text-muted)", textAlign: "center", maxWidth: 640, margin: "0 auto" }}>
+          Equipo, tecnología y presencia real en cada punto donde operamos.
+        </p>
+        <div className="gallery-grid">
+          <div className="gallery-tile tile-lg">
+            <img src={imgEscolta} alt="Escolta SMC en traje formal junto a vehículo" loading="lazy" />
+            <div className="gallery-tile-label"><small>Servicios de escolta</small>Protección estratégica</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgRecepcion} alt="Recepción atendiendo visitante" loading="lazy" />
+            <div className="gallery-tile-label"><small>Recepción</small>Atención profesional</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgTorniquetes} alt="Torniquetes con biométrico" loading="lazy" />
+            <div className="gallery-tile-label"><small>Control de acceso</small>Validación facial</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgGuardiaResidencial} alt="Guardia uniformado en residencial" loading="lazy" />
+            <div className="gallery-tile-label"><small>Residencial</small>Vigilancia perimetral</div>
+          </div>
+          <div className="gallery-tile">
+            <img src={imgCamaraAcceso} alt="Cámara y biométrico en acceso" loading="lazy" />
+            <div className="gallery-tile-label"><small>Tecnología</small>Cámaras e IA</div>
           </div>
         </div>
       </section>

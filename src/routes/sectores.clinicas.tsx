@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeartPulse } from "lucide-react";
 import { SectorPage } from "@/components/SectorPage";
+import { imgRecepcion } from "@/assets/smc";
 
 export const Route = createFileRoute("/sectores/clinicas")({
   component: () => (
     <SectorPage
       icon={HeartPulse}
+      coverImage={imgRecepcion}
+      coverAlt="Recepcionista atendiendo a una paciente en lobby clínico"
       badge="Clínicas y Centros Médicos"
       title="Seguridad especializada para entornos sensibles"
       intro={[
